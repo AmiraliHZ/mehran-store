@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه مهران | لوازم جلوبندی و سیستم تعلیق خودرو</title>
+    <meta name="description" content="فروشگاه مهران، مرکز تخصصی تهیه و توزیع لوازم جلوبندی، کمک فنر، اکسل و سیستم تعلیق خودروهای ایرانی و چینی در تهران. تلفن: 55825479">
+    <meta name="keywords" content="لوازم یدکی, جلوبندی, کمک فنر, سیستم تعلیق, اکسل, خودرو چینی, خودرو ایرانی, فروشگاه مهران">
+    <meta name="author" content="فروشگاه مهران">
+    <meta name="theme-color" content="#2c3e50">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="فروشگاه مهران | لوازم جلوبندی و تعلیق">
+    <meta property="og:description" content="مرکز تخصصی لوازم جلوبندی، کمک فنر و اکسل خودروهای چینی و ایرانی.">
+    <meta property="og:url" content="https://mehranstore.example.com/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80">
+    <meta property="business:contact_data:street_address" content="انتهای بزرگراه نواب، بلوار جوانه، خیابان مهران جنوبی، پلاک 198">
+    <meta property="business:contact_data:locality" content="Tehran">
+    <meta property="business:contact_data:country_name" content="Iran">
+
+    <!-- JSON-LD Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoPartsStore",
+      "name": "فروشگاه مهران",
+      "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=80",
+      "telephone": "+982155825479",
+      "url": "https://mehranstore.example.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "انتهای بزرگراه نواب، بلوار جوانه، خیابان مهران جنوبی، پلاک 198",
+        "addressLocality": "تهران",
+        "addressRegion": "تهران",
+        "postalCode": "", 
+        "addressCountry": "IR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.65, 
+        "longitude": 51.38
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "opens": "08:30",
+        "closes": "20:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Import Vazirmatn Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Reset & Variables --- */
+        :root {
+            /* Light Mode Variables (Default) */
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #3498db;
+            
+            --bg-body: #f8f9fa;
+            --bg-surface: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #eeeeee;
+            
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+            --font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --primary-color: #aab7c4; /* Lighter shade for dark mode readability */
+            --secondary-color: #d35400; 
+            
+            --bg-body: #121212;
+            --bg-surface: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --border-color: #333333;
+            
+            --shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            direction: rtl;
+            text-align: right;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- Components --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            gap: 8px;
+            font-family: var(--font-family);
+        }
+
+        .btn-primary { background-color: var(--secondary-color); color: #fff; }
+        .btn-primary:hover { background-color: #d35400; transform: translateY(-2px); }
+        
+        .btn-outline { border: 2px solid var(--bg-surface); color: var(--bg-surface); background: transparent; }
+        .btn-outline:hover { background: var(--bg-surface); color: #333; } /* Always dark text on hover */
+
+        .btn-success { background-color: #27ae60; color: white; }
+        .btn-success:hover { background-color: #219150; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bg-surface);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800; /* Extra bold for Vazir */
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .theme-toggle:hover {
+            background-color: var(--bg-body);
+            color: var(--secondary-color);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            /* Using the requested Unsplash URL with a heavy dark overlay */
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800; }
+        #hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+
+        /* --- Intro --- */
+        #intro { padding: 60px 0; background: var(--bg-surface); text-align: center; transition: background 0.3s; }
+        #intro p { max-width: 800px; margin: 0 auto 20px; color: var(--text-muted); }
+
+        /* --- Products --- */
+        #products { padding: 60px 0; background: var(--bg-body); transition: background 0.3s; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--bg-surface);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); border-color: var(--secondary-color); }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #eee;
+            /* Dark Filter applied to match theme */
+            filter: brightness(0.65) contrast(1.1);
+            transition: filter 0.4s ease;
+        }
+        
+        /* Lift filter on hover */
+        .product-card:hover .product-img {
+            filter: brightness(1) contrast(1);
+        }
+
+        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; color: var(--primary-color); }
+        .product-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .fav-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        .fav-btn.active { color: #e74c3c; }
+
+        /* --- Services --- */
+        #services { padding: 60px 0; background: var(--bg-surface); transition: background 0.3s; }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .service-item {
+            flex: 1 1 250px;
+            max-width: 350px;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            background: var(--bg-body);
+        }
+        .service-item:hover { border-color: var(--secondary-color); transform: translateY(-3px); }
+        .service-icon { width: 60px; height: 60px; fill: var(--secondary-color); margin-bottom: 20px; }
+        .service-item h3 { margin-bottom: 15px; color: var(--primary-color); }
+        .service-item p { color: var(--text-muted); }
+
+        /* --- Gallery --- */
+        #gallery { padding: 60px 0; background: var(--bg-body); transition: background 0.3s; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 200px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s, filter 0.4s;
+            /* Dark Filter applied to match theme */
+            filter: brightness(0.65) contrast(1.1);
+        }
+        
+        /* Lift filter and zoom on hover */
+        .gallery-item:hover img { 
+            transform: scale(1.1); 
+            filter: brightness(1) contrast(1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(44, 62, 80, 0.4); /* Blueish overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-icon { fill: white; width: 40px; height: 40px; }
+
+        /* --- About --- */
+        #about { padding: 60px 0; background: var(--primary-color); color: #fff; /* White text on dark/blue bg */ }
+        
+        /* Specific override for About section in Dark Mode if primary color is too light */
+        body.dark-mode #about { background: #2c3e50; /* Keep it dark blueish even in dark mode */ }
+
+        .about-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+        .about-text { flex: 1 1 400px; }
+        .about-features ul { margin-top: 20px; }
+        .about-features li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .check-icon { fill: var(--secondary-color); width: 20px; height: 20px; }
+
+        /* --- Contact --- */
+        #contact { padding: 60px 0; background: var(--bg-surface); transition: background 0.3s; }
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .contact-info { flex: 1 1 300px; }
+        .contact-form-box { flex: 1 1 400px; background: var(--bg-body); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
+
+        .info-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+        .info-icon { width: 24px; height: 24px; fill: var(--secondary-color); flex-shrink: 0; }
+        .info-content h4 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary-color); }
+        .info-content p, .info-content a { color: var(--text-muted); font-size: 0.95rem; }
+        .info-content a:hover { color: var(--secondary-color); }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-main); }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .form-control:focus { outline: none; border-color: var(--secondary-color); }
+        
+        .map-container {
+            margin-top: 40px;
+            height: 350px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: #eee;
+        }
+        .map-frame { width: 100%; height: 100%; border: 0; }
+
+        /* --- Footer --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 40px 0 20px; font-size: 0.9rem; border-top: 3px solid var(--secondary-color); }
+        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 30px; }
+        .footer-col { flex: 1 1 200px; }
+        .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a:hover { color: var(--secondary-color); }
+        .copyright { text-align: center; }
+
+        /* --- Modal/Lightbox --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 4px; border: 2px solid #fff; }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px; }
+        .faq-question { font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; color: #fff; }
+        .faq-answer { display: none; margin-top: 10px; color: #ddd; font-size: 0.95rem; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-icon { transition: 0.3s; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .navbar { height: auto; padding: 15px 0; flex-wrap: wrap; }
+            .nav-left { width: 100%; justify-content: space-between; margin-bottom: 15px; }
+            .hamburger { display: block; }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-body);
+                padding: 10px;
+                border-radius: 4px;
+                border: 1px solid var(--border-color);
+            }
+            .nav-links.active { display: flex; }
+            
+            #hero h1 { font-size: 1.8rem; }
+            .contact-wrapper { flex-direction: column-reverse; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                    </svg>
+                    فروشگاه مهران
+                </div>
+                <!-- Dark Mode Toggle Button -->
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="تغییر حالت شب و روز">
+                    <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Moon Icon (Default for Light Mode) -->
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="hamburger" onclick="toggleMenu()" aria-label="منوی موبایل">☰</div>
+            </div>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero">خانه</a>
+                <a href="#intro">معرفی</a>
+                <a href="#products">محصولات</a>
+                <a href="#services">خدمات</a>
+                <a href="#gallery">گالری</a>
+                <a href="#about">درباره ما</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">تماس با ما</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1>تخصصی‌ترین مرکز لوازم جلوبندی و سیستم تعلیق</h1>
+                <p>تهیه و توزیع قطعات باکیفیت برای انواع خودروهای ایرانی و چینی</p>
+                <div class="hero-btns">
+                    <a href="tel:09122949051" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.65.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 8.84 7.16 16 16 16 .55 0 1-.45 1-1v-3.61c0-.55-.45-1-1-1z"/></svg>
+                        تماس فوری
+                    </a>
+                    <a href="https://wa.me/989122949051" target="_blank" class="btn btn-success">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c1.005.572 1.913.846 3.037.849 3.182 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.999-5.77zm0 0"/></svg>
+                        واتساپ
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro">
+            <div class="container">
+                <h2 class="section-title">به فروشگاه مهران خوش آمدید</h2>
+                <p>
+                    فروشگاه مهران با سال‌ها تجربه در بازار قطعات یدکی خودرو، مرجع تخصصی شما برای تهیه انواع لوازم جلوبندی، کمک فنر، اکسل و سیستم تعلیق است. تمرکز ما بر ارائه بهترین کیفیت برای خودروهای ایرانی و چینی می‌باشد.
+                </p>
+                <p>
+                    هدف ما ارائه قطعات با ضمانت اصالت و قیمت رقابتی است تا رانندگی ایمن و نرمی را برای شما فراهم کنیم. از مشاوره پیش از خرید تا خدمات پس از فروش، در کنار شما هستیم.
+                </p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <div class="container">
+                <h2 class="section-title">محصولات منتخب</h2>
+                <div class="product-grid" id="productGrid">
+                    <!-- Products generated by JS below -->
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#contact" class="btn btn-outline" style="color: var(--primary-color); border-color: var(--primary-color);">استعلام قیمت سایر قطعات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">خدمات ما</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                        <h3>مشاوره تخصصی</h3>
+                        <p>راهنمایی کامل جهت انتخاب بهترین برند کمک فنر و قطعات متناسب با بودجه و نیاز خودروی شما.</p>
+                    </div>
+                    <div class="service-item">
+                        <svg class="service-icon" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/></svg>
+                        <h3>تامین قطعات کمیاب</h3>
+                        <p>تهیه انواع اکسل و لوازم تعلیق خودروهای چینی (ام‌وی‌ام، جک، چری) و ایرانی که در بازار کمیاب هستند.</p>
+                    </div>
+                    <div class="service-item">
+                        <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        <h3>ضمانت و اصالت</h3>
+                        <p>تمامی قطعات ارائه شده در فروشگاه مهران دارای ضمانت سلامت فیزیکی و اصالت کالا می‌باشند.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2 class="section-title">گالری تصاویر</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Gallery items injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 style="margin-bottom: 20px;">چرا فروشگاه مهران؟</h2>
+                        <p>ما در فروشگاه مهران با درک حساسیت سیستم تعلیق در ایمنی خودرو، تنها با برندهای معتبر همکاری می‌کنیم. تخصص ما در شناخت دقیق قطعات خودروهای چینی و ایرانی باعث می‌شود تا شما با اطمینان خاطر خرید کنید.</p>
+                        <div class="about-features">
+                            <ul>
+                                <li><svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> قیمت منصفانه و رقابتی</li>
+                                <li><svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> ارسال سریع به سراسر تهران و شهرستان‌ها</li>
+                                <li><svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> تنوع بالای قطعات جلوبندی</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- FAQ Section -->
+                     <div style="flex: 1 1 300px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                        <h3 style="margin-bottom: 15px;">سوالات متداول</h3>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>آیا قطعات ضمانت دارند؟</span>
+                                <span class="faq-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">بله، تمامی قطعات اصلی دارای ضمانت اصالت و سلامت هستند.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>ارسال به شهرستان دارید؟</span>
+                                <span class="faq-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">بله، سفارشات شما از طریق باربری یا تیپاکس به سراسر ایران ارسال می‌شود.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>برای خودروهای چینی قطعه دارید؟</span>
+                                <span class="faq-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">تخصص ما تامین قطعات جلوبندی و تعلیق خودروهای چینی (ام‌وی‌ام، جک، لیفان و...) است.</div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">تماس با ما</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <div class="info-content">
+                                <h4>آدرس</h4>
+                                <p>تهران - انتهای بزرگراه نواب - بلوار جوانه - خیابان مهران جنوبی - پلاک 198</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 .01 1.25.21 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <div class="info-content">
+                                <h4>تلفن ثابت</h4>
+                                <a href="tel:02155825479">55825479 - 021</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                            <div class="info-content">
+                                <h4>موبایل / واتساپ</h4>
+                                <p><a href="tel:09122949051">09122949051</a> <span style="font-size:0.8em; color:var(--text-muted); cursor:pointer;" onclick="copyToClipboard('09122949051')">(کپی)</span></p>
+                                <p><a href="tel:09023231104">09023231104</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <div class="info-content">
+                                <h4>ساعات کاری</h4>
+                                <p>شنبه تا پنجشنبه: 8:30 صبح الی 8:00 شب</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-box">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">ارسال پیام</h3>
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">نام و نام خانوادگی</label>
+                                <input type="text" id="name" class="form-control" required placeholder="مثال: علی محمدی">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">شماره تماس</label>
+                                <input type="tel" id="phone" class="form-control" required pattern="09[0-9]{9}" placeholder="مثال: 09120000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">پیام شما</label>
+                                <textarea id="message" rows="4" class="form-control" required placeholder="قطعه مورد نظر یا سوال خود را بنویسید..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">ارسال پیام</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="map-container">
+                    <iframe class="map-frame" 
+                        src="https://maps.google.com/maps?q=Tehran+Navab+Highway+Javaneh+Blvd+Mehran+South+St&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen loading="lazy" title="موقعیت مکانی فروشگاه مهران">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>فروشگاه مهران</h4>
+                    <p>بورس لوازم جلوبندی، کمک فنر و اکسل خودروهای ایرانی و چینی. کیفیت برتر، قیمت مناسب.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>لینک‌های سریع</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">صفحه اصلی</a></li>
+                        <li><a href="#products">محصولات</a></li>
+                        <li><a href="#about">درباره ما</a></li>
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تماس</h4>
+                    <p>021-55825479</p>
+                    <p>0912-2949051</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 فروشگاه مهران. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="modal" onclick="closeLightbox(event)">
+        <span class="close-modal" onclick="document.getElementById('lightbox').style.display='none'">&times;</span>
+        <img class="modal-content" id="lightbox-img">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- Data: Products ---
+        // Using strict single URL for all images as requested
+        const masterImage = 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80';
+        
+        const products = [
+            { id: 1, title: 'کمک فنر جلو پژو 206', desc: 'مارک اصلی، گازی روغنی، ضمانت 6 ماهه', price: 'تماس بگیرید', img: masterImage },
+            { id: 2, title: 'اکسل عقب کامل پراید', desc: 'شرکتی، کیفیت درجه یک، همراه با بوش', price: 'تماس بگیرید', img: masterImage },
+            { id: 3, title: 'طبق ام‌وی‌ام 315', desc: 'وارداتی، جنس اصلی شرکتی، چپ و راست', price: 'تماس بگیرید', img: masterImage },
+            { id: 4, title: 'سیبک فرمان جک J5', desc: 'تضمین کیفیت، عمر طولانی', price: 'تماس بگیرید', img: masterImage },
+            { id: 5, title: 'پلوس کامل سمند', desc: 'مارک معتبر، خار بیرون و داخل استاندارد', price: 'تماس بگیرید', img: masterImage },
+            { id: 6, title: 'لنت ترمز سرامیکی', desc: 'بدون صدا، ترمزگیری عالی برای انواع خودرو', price: 'تماس بگیرید', img: masterImage }
+        ];
+
+        // --- Data: Gallery Images ---
+        const galleryImages = [
+            masterImage,
+            masterImage,
+            masterImage,
+            masterImage,
+        ];
+
+        // --- Render Products ---
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const favorites = JSON.parse(localStorage.getItem('mehran_favorites') || '[]');
+
+            grid.innerHTML = products.map(p => {
+                const isFav = favorites.includes(p.id) ? 'active' : '';
+                return `
+                <div class="product-card">
+                    <img src="${p.img}" alt="${p.title}" class="product-img" loading="lazy">
+                    <div class="product-info">
+                        <div class="product-title">${p.title}</div>
+                        <div class="product-desc">${p.desc}</div>
+                        <div style="font-weight:bold; color:var(--secondary-color);">${p.price}</div>
+                        <div class="product-actions">
+                            <a href="#contact" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.85rem;">سفارش / استعلام</a>
+                            <button class="fav-btn ${isFav}" onclick="toggleFavorite(${p.id}, this)" aria-label="افزودن به علاقه‌مندی">
+                                ♥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // --- Render Gallery ---
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = galleryImages.map(src => `
+                <div class="gallery-item" onclick="openLightbox('${src}')">
+                    <img src="${src}" alt="Gallery Image" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg class="gallery-icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- Interactions ---
+
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Favorites Logic
+        function toggleFavorite(id, btn) {
+            let favorites = JSON.parse(localStorage.getItem('mehran_favorites') || '[]');
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(favId => favId !== id);
+                btn.classList.remove('active');
+            } else {
+                favorites.push(id);
+                btn.classList.add('active');
+            }
+            localStorage.setItem('mehran_favorites', JSON.stringify(favorites));
+        }
+
+        // Form Handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            if(name.length < 2) { alert('لطفا نام معتبر وارد کنید'); return; }
+            if(!/^09[0-9]{9}$/.test(phone)) { alert('لطفا شماره موبایل معتبر وارد کنید (مثال 0912...)'); return; }
+
+            const submission = { name, phone, message, date: new Date().toLocaleString() };
+            const messages = JSON.parse(localStorage.getItem('mehran_messages') || '[]');
+            messages.push(submission);
+            localStorage.setItem('mehran_messages', JSON.stringify(messages));
+
+            alert('پیام شما با موفقیت ثبت شد. همکاران ما در اسرع وقت با شما تماس خواهند گرفت.');
+            e.target.reset();
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.style.display = "flex";
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox') {
+                e.target.style.display = "none";
+            }
+        }
+
+        // Copy to Clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('شماره کپی شد: ' + text);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // --- Dark Mode Logic ---
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            
+            body.classList.toggle('dark-mode');
+            
+            // Save preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                // Change icon to Sun
+                icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                // Change icon to Moon
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            }
+        }
+
+        // Initialize Theme on Load
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const icon = document.getElementById('theme-icon');
+
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.body.classList.add('dark-mode');
+                // Set Sun Icon
+                icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderGallery();
+            initTheme();
+        });
+
+    </script>
+</body>
+</html>
