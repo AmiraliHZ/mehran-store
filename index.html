@@ -10,11 +10,13 @@
     <meta name="theme-color" content="#2c3e50">
 
     <!-- Open Graph / Facebook -->
+    <!-- نکته: برای نمایش صحیح تصویر در شبکه‌های اجتماعی بهتر است بعداً آدرس کامل سایت را قبل از hero.jpg قرار دهید -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="فروشگاه مهران | لوازم جلوبندی و تعلیق">
     <meta property="og:description" content="مرکز تخصصی لوازم جلوبندی، کمک فنر و اکسل خودروهای چینی و ایرانی.">
-    <meta property="og:url" content="https://mehranstore.example.com/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80">
+    <!-- آدرس فرضی سایت -->
+    <meta property="og:url" content="https://mehranstore.github.io/"> 
+    <meta property="og:image" content="hero.jpg">
     <meta property="business:contact_data:street_address" content="انتهای بزرگراه نواب، بلوار جوانه، خیابان مهران جنوبی، پلاک 198">
     <meta property="business:contact_data:locality" content="Tehran">
     <meta property="business:contact_data:country_name" content="Iran">
@@ -25,9 +27,9 @@
       "@context": "https://schema.org",
       "@type": "AutoPartsStore",
       "name": "فروشگاه مهران",
-      "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=80",
+      "image": "hero.jpg",
       "telephone": "+982155825479",
-      "url": "https://mehranstore.example.com/",
+      "url": "https://mehranstore.github.io/",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "انتهای بزرگراه نواب، بلوار جوانه، خیابان مهران جنوبی، پلاک 198",
@@ -245,8 +247,8 @@
 
         /* --- Hero Section --- */
         #hero {
-            /* Using the requested Unsplash URL with a heavy dark overlay */
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80');
+            /* Using local file hero.jpg from repository root */
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('hero.jpg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
@@ -762,8 +764,8 @@
     <!-- Scripts -->
     <script>
         // --- Data: Products ---
-        // Using strict single URL for all images as requested
-        const masterImage = 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80';
+        // Using local file hero.jpg (Relative path)
+        const masterImage = 'hero.jpg';
         
         const products = [
             { id: 1, title: 'کمک فنر جلو پژو 206', desc: 'مارک اصلی، گازی روغنی، ضمانت 6 ماهه', price: 'تماس بگیرید', img: masterImage },
